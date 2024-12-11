@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from django.http import HttpResponse
 from pymongo import MongoClient
@@ -53,10 +52,15 @@ def reset_password_view(request):
 
         if new_password and confirm_password:
             if new_password == confirm_password:
-                request.user.password = make_password(new_password)
-                request.user.save()
+                user_data = db.users.find_one({"username": request.user.username})
+                
+                if user_data and "_id" in user_data:
+                    db.users.update_one(
+                        {"_id": user_data["_id"]},
+                        {"$set": {"password": new_password}}
+                    )
                 messages.success(request, "Ваш пароль успішно змінено.")
-                return redirect('quotes:index')  # Перенаправити на головну сторінку
+                return redirect('quotes:index')
             else:
                 messages.error(request, "Паролі не співпадають.")
         else:
