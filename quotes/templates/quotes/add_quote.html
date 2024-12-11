@@ -1,0 +1,31 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Додати нову цитату</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.author.label }} <!-- Відображаємо мітку для поля автор -->
+            {{ form.author }}  <!-- Відображаємо поле для автора -->
+        </div>
+
+        <div class="form-group">
+            {{ form.quote.label }} <!-- Відображаємо мітку для поля цитати -->
+            {{ form.quote }} <!-- Відображаємо поле для цитати -->
+        </div>
+        
+        <div class="form-group">
+            {{ form.tags.label }} <!-- Відображаємо мітку для поля тегів -->
+            {{ form.tags }} <!-- Відображаємо поле для тегів -->
+        </div>
+
+        <!-- Кнопка для відправлення форми -->
+        <button type="submit" class="btn btn-success">Зберегти</button>
+        
+        <!-- Кнопка для скасування -->
+        <a href="{% url 'quotes:index' %}" class="btn btn-secondary">Скасувати</a>
+    </form>
+</div>
+{% endblock %}

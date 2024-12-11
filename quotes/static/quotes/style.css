@@ -1,0 +1,73 @@
+.quote {
+	padding: 30px;
+	margin-bottom: 30px;
+	border: 2px solid #333333;
+	border-radius: 10px;
+	box-shadow: 2px 2px 3px #333333;
+}
+
+.quote span.text {
+	display: block;
+	margin-bottom: 5px;
+	font-size: large;
+	font-style: italic;
+}
+
+.quote small.author {
+	font-weight: bold;
+	color: #3677E8;
+}
+
+.tag {
+	padding: 2px 5px;
+	border-radius: 5px;
+	color: white;
+	font-size: small;
+	background-color: #7CA3E6;
+}
+
+.pager li > a, .pager li > span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 15px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	line-height: 1.5;
+	color: inherit;
+}
+
+.pager {
+	font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.pager {
+	padding-left: 0;
+	margin: 22px 0;
+	list-style: none;
+	text-align: center;
+}
+
+ul.pager {
+	margin-bottom: 70px;
+}
+
+.pager .next > a, .pager .next > span {
+	float: right;
+}
+
+.pager .previous > a, .pager .previous > span {
+	float: left;
+}
+
+.pager li > a, .pager li > span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 15px;
+}
